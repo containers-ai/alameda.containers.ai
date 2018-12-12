@@ -4,6 +4,7 @@ RUN echo 'gem: --no-document' >> /etc/gemrc
 
 RUN apk add --no-cache \
     nodejs \
+    nodejs-npm \
     ruby \
     ruby-dev \
     build-base \
@@ -17,7 +18,7 @@ RUN apk add --no-cache \
     bash \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted gnu-libiconv
 
-ENV HUGO_VERSION=0.51
+ENV HUGO_VERSION=0.52
 ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz /tmp
 RUN tar -xf /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C /tmp \
     && mkdir -p /usr/local/sbin \
