@@ -25,12 +25,8 @@ ignoreFiles = [ "OWNERS" ]
     extensions = [""]
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML"]
   section = ["HTML"]
-
-[outputFormats]
-    [outputFormats.RSS]
-        baseName = "feed"
 
 [related]
     # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
