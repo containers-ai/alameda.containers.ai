@@ -51,7 +51,7 @@ title: Alameda
         <div class="row no-gutters">
             <div class="col-12 col-md-6">
                 <h2>Want to learn more?</h2>
-                <p>Get started by learning Alameda concepts and running through our BookInfo sample.</p>
+                <p>Get started by learning Alameda concepts and running through our sample.</p>
                 <a class="btn btn-alameda" href="/docs/">GET STARTED</a>
             </div>
 
