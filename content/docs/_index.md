@@ -1,6 +1,7 @@
 ---
 title: Welcome
-description: Alameda documentation home page.
+linktitle: Docs
+description: Learn how to deploy, use, and operate Alameda.
 weight: 1
 sidebar_multicard: true
 ---
