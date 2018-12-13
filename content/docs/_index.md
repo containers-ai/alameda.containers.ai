@@ -14,7 +14,7 @@ is where you can learn about what Alameda does and how it does it.
   the Alameda control plane in various environments, as well as instructions
   for installing the sidecar in the application deployment. Quick start
   instructions are available for
-  [Kubernetes](/docs/setup/kubernetes/quick-start/) and
+  [Kubernetes](/docs/setup/kubernetes/) and [OKD](/docs/setup/okd)
 
 - [Tasks](/docs/tasks/). Tasks show you how to do a single directed activity with Alameda.
 
@@ -27,9 +27,9 @@ command-line options, configuration options, API definitions, and procedures.
 In addition, you might find these links interesting:
 
 - The latest Alameda monthly release is {{< alameda_version >}}: [download {{< alameda_version >}}](https://github.com/containers-ai/alameda/releases),
-[release notes](/about/notes/{{< alameda_version >}}/).
+[release notes](/about/notes/).
 
 - We're always looking for help improving our documentation, so please don't hesitate to
 [file an issue](https://github.com/containers-ai/containers.ai/issues/new) if you see some problem.
-Or better yet, submit your own [contributions](/about/contribute/editing/) to help
+Or better yet, submit your own [contributions](/about/contribute/) to help
 make our docs better.
