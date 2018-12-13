@@ -27,8 +27,7 @@ $ make serve
 This will build the site and start a web server hosting the site. You can then connect to the web server
 at `http://localhost:1313`.
 
-All normal content for the site is located in the `content` directory, as well as in sibling translated
-directories such as content_zh.
+All normal content for the site is located in the `content` directory.
 
 ## Linting
 

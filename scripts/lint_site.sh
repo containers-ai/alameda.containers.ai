@@ -68,7 +68,6 @@ check_content() {
 }
 
 check_content content --en-us
-check_content content_zh --zh-cn
 
 grep -nr -e "“" ./content
 if [ "$?" == "0" ]
@@ -77,7 +76,7 @@ then
     FAILED=1
 fi
 
-htmlproofer ./public --assume-extension --check-html --check-external-hash --check-opengraph --timeframe 2d --storage-dir .htmlproofer --url-ignore "/localhost/,/github.com/istio/istio.io/edit/master/,/github.com/istio/istio/issues/new/choose/,/groups.google.com/forum/,/www.trulia.com/"
+htmlproofer ./public --assume-extension --check-html --check-external-hash --check-opengraph --timeframe 2d --storage-dir .htmlproofer --url-ignore "/localhost/,/github.com/containers-ai/containers.ai/edit/master/,/github.com/containers-ai/alameda/issues/new/choose/,/groups.google.com/forum/,/www.trulia.com/"
 if [ "$?" != "0" ]
 then
     FAILED=1
