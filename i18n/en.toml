@@ -1,0 +1,41 @@
+[for_users]
+other = "for users"
+
+[for_developers]
+other = "for developers"
+
+[github_desc]
+other = "GitHub is where development takes place on Alameda code"
+
+[slack_desc]
+other = "Interactively discuss development issues with the Alameda community on Slack (invitation-only)"
+
+[report_site_bugs]
+other = "Report Site Bugs"
+
+[edit_on_github]
+other = "Edit this Page on GitHub"
+
+[light_theme]
+other = "Light Theme"
+
+[dark_theme]
+other = "Dark Theme"
+
+[other_versions_of_site]
+other = "Other versions of this site"
+
+[current_release]
+other = "Current Release (%s)"
+
+[next_release]
+other = "Next Release (Preliminary %s)"
+
+[archived_releases]
+other = "Older Releases"
+
+[options_menu]
+other = "Options and Settings"
+
+[search]
+other = "Search containers.ai"

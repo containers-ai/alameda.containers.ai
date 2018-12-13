@@ -1,0 +1,58 @@
+<footer class="d-print-none container-fluid">
+    <div class="row">
+        <div class="col-6 col-lg-4" role="navigation">
+            <div class="container-fluid">
+                <div class="row">
+                </div>
+
+                <div class="tag row d-none d-lg-flex">
+                    {{ i18n "for_users" }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-lg-4">
+            <p class="text-center copyright" role="contentinfo">
+                Alameda
+                {{ if .Site.Data.args.archive }}
+                    Archive
+                {{ else if .Site.Data.args.preliminary }}
+                    Preliminary
+                {{ end }}
+                {{ .Site.Data.args.version }}<br>&copy; 2018 Alameda Authors<br>
+                {{ if .Site.Data.args.archive }}
+                    Archived on {{ .Site.Data.args.archive_date.Format "January 2, 2018"}}
+                {{ else }}
+                This page was last modified on {{ .Page.Lastmod.Format "January 2, 2018" }}
+                {{ end }}
+            </p>
+        </div>
+
+        <div class="col-6 col-lg-4 d-none d-lg-flex" role="navigation">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="icon">
+                        <span>github</span>
+                        <a title='{{ i18n "github_desc" }}'
+                           href="https://github.com/containers-ai/alameda" aria-label="GitHub">
+                            {{ partial "icons/github.svg" }}
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <span>slack</span>
+                        <a title='{{ i18n "slack_desc" }}'
+                                href="https://istio.slack.com" aria-label="slack">
+                            {{ partial "icons/slack.svg" }}
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="tag row justify-content-end text-right">
+                    {{ i18n "for_developers" }}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
