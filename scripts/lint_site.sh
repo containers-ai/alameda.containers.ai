@@ -43,7 +43,7 @@ check_content() {
     mdspell ${LANG} --ignore-acronyms --ignore-numbers --no-suggestions --report *.md */*.md */*/*.md */*/*/*.md */*/*/*/*.md */*/*/*/*/*.md */*/*/*/*/*/*.md
     if [ "$?" != "0" ]
     then
-        echo "To learn how to address spelling errors, please see https://github.com/istio/istio.io#linting"
+        echo "To learn how to address spelling errors, please see https://github.com/containers-ai/containers.ai#linting"
         FAILED=1
     fi
 
@@ -53,10 +53,10 @@ check_content() {
         FAILED=1
     fi
 
-    grep -nr -e "(https://istio.io" .
+    grep -nr -e "(https://containers.ai" .
     if [ "$?" == "0" ]
     then
-        echo "Ensure markdown content uses relative references to istio.io"
+        echo "Ensure markdown content uses relative references to containers.ai"
         FAILED=1
     fi
 
