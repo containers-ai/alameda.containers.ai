@@ -11,18 +11,8 @@ jobs:
 
       - run:
           name: Generating Site
-          command: scripts/gen_site.sh ""
-
-      - restore_cache:
-          keys:
-          - htmlproofer-cache-v4
+          command: scripts/gen_site.sh "" -no_minify
 
       - run:
           name: Running Linters
           command: scripts/lint_site.sh
-
-      # save the external URLs cache
-      - save_cache:
-          key: htmlproofer-cache-v4
-          paths:
-            - .htmlproofer
