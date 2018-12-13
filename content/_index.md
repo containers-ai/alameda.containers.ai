@@ -47,36 +47,6 @@ title: Alameda
         </div>
     </div>
 
-    <div class="container-fluid traffic color1">
-        <div class="row align-items-center justify-content-center">
-            <!-- <div class="col-12 col-md-5">
-                {{< inline_image "landing/routing-and-load-balancing.svg" >}}
-            </div> -->
-            <div class="col-12 col-md-5 landing-text">
-                <h2>Intelligent Resource Manage</h2>
-                <p>
-                    Control resource between nodess with dynamic route configuration.
-                    <a href="/docs/concepts/traffic-management/overview/">Learn more...</a>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid resilience color2">
-        <div class="row align-items-center justify-content-center">
-            <!-- <div class="col-12 col-md-5">
-                {{ partial "landing/resiliency.svg" }}
-            </div> -->
-            <div class="col-12 col-md-5 order-md-first landing-text">
-                <h2>Resilience Across Languages and Platforms</h2>
-                <p>
-                    Increase reliability by shielding applications from flaky networks and cascading failures in adverse conditions.
-                    <a href="/docs/concepts/traffic-management/handling-failures/">Learn more...</a>
-                </p>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid call color1">
         <div class="row no-gutters">
             <div class="col-12 col-md-6">
