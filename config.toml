@@ -4,13 +4,13 @@ metaDataFormat = "yaml"
 title = "Alameda"
 uglyURLs = false
 enableRobotsTXT = true
+googleAnalytics = "UA-98480406-1"
 pluralizeListTitles = false
-canonifyURLs = true
+canonifyURLs = false
 disableKinds = ["taxonomy", "taxonomyTerm"]
 anchor = "smart"
 enableGitInfo = true
 enableEmoji = true
-buildFuture = true
 ignoreFiles = [ "OWNERS" ]
 
 
