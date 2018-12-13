@@ -3,7 +3,6 @@ languageCode = "en-us"
 metaDataFormat = "yaml"
 title = "Alameda"
 uglyURLs = false
-uglyURLs = false
 enableRobotsTXT = true
 pluralizeListTitles = false
 canonifyURLs = true
@@ -32,7 +31,7 @@ ignoreFiles = [ "OWNERS" ]
 [outputFormats]
     [outputFormats.RSS]
         baseName = "feed"
-        
+
 [related]
     # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
     threshold = 80
