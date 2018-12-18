@@ -4,4 +4,4 @@ WORKDIR ~/site
 
 ADD . .
 
-CMD [ "/usr/bin/ruby", "-v"]
+CMD [ "irb" ]
