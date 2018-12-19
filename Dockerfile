@@ -4,4 +4,4 @@ WORKDIR ~/site
 
 ADD . .
 
-ENTRYPOINT ["/bin/bash"]
+CMD [ "/usr/bin/ruby", "-v"]
