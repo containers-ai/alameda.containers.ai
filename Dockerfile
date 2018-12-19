@@ -4,4 +4,4 @@ WORKDIR ~/site
 
 ADD . .
 
-CMD [ "irb" ]
+CMD make serve
