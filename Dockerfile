@@ -4,4 +4,4 @@ WORKDIR ~/site
 
 ADD . .
 
-CMD make serve
+CMD make serve_hugo

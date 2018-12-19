@@ -18,5 +18,8 @@ lint:
 serve:
 	docker run -t -i --sig-proxy=true --rm -v $(shell pwd):/site -w /site -p 1313:1313 $(img) hugo serve --baseURL "http://localhost:1313/" --bind 0.0.0.0 --disableFastRender
 
+serve_hugo:
+	hugo serve
+	
 netlify:
 	scripts/gen_site.sh "$(baseurl)"
