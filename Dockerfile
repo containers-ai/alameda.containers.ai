@@ -4,4 +4,4 @@ WORKDIR ~/site
 
 ADD . .
 
-CMD hugo serve
+ENTRYPOINT ["/bin/bash"]
