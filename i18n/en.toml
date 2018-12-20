@@ -1,14 +1,26 @@
+[alameda_users_desc]
+other = "Join the alameda-users@ mailing list to participate in discussions and get help troubleshooting problems"
+
 [for_users]
 other = "for users"
 
 [for_developers]
 other = "for developers"
 
+[alameda_dev_desc]
+other = "Join the alameda-dev@ mailing list to discuss development issues around the Alameda project"
+
 [github_desc]
 other = "GitHub is where development takes place on Alameda code"
 
+[team_drive_desc]
+other = "Access our team drive if you'd like to take a look at the Alameda technical design documents"
+
+[working_group_desc]
+other = "If you'd like to contribute to the Alameda project, consider participating in our working groups"
+
 [slack_desc]
-other = "Interactively discuss development issues with the Alameda community on Slack (invitation-only)"
+other = "Interactively discuss development issues with the Alameda community on Slack"
 
 [report_site_bugs]
 other = "Report Site Bugs"
@@ -35,7 +47,109 @@ other = "Next Release (Preliminary %s)"
 other = "Older Releases"
 
 [options_menu]
-other = "Options and Settings"
+other = "Options and settings"
 
 [search]
-other = "Search containers.ai"
+other = "Search this site"
+
+[footer_alameda]
+other = "Alameda"
+
+[footer_alameda_preliminary]
+other = "Alameda Preliminary"
+
+[footer_alameda_archive]
+other = "Alameda Archive"
+
+[footer_archived_on]
+other = "Archived on %s"
+
+[footer_last_modified]
+other = "Page last modified: %s"
+
+[footer_date_format]
+other = "January 2, 2006"
+
+[footer_privacy_policy]
+other = "Privacy Policy"
+
+[page_publish_date_format]
+other = "January 2, 2006"
+
+[page_last_update_format]
+other = "(updated on %s)"
+
+[page_word_count]
+other = "%d words"
+
+[page_reading_time]
+other = "%v minute read"
+
+[relnote_download]
+other = "DOWNLOAD %s"
+
+[relnote_changes]
+other = "CHANGES IN %s"
+
+[relnote_docs]
+other = "%s DOCS"
+
+[page_attribution]
+other = "By "
+
+[button_copy]
+other = "Copy to clipoboard"
+
+[button_print]
+other = "Print"
+
+[button_download]
+other = "Download"
+
+[button_top]
+other = "Back to top"
+
+[button_sidenav]
+other = "Toggle the navigation bar"
+
+[partner_component_notice]
+other = "This component was created and is maintained by an Alameda partner. Please address support questions to the partner directly."
+
+[partner_component_partner]
+other = "Partner"
+
+[partner_component_contact]
+other = "Contact"
+
+[partner_component_support_site]
+other = "Support Site"
+
+[partner_component_source_code]
+other = "Source Code"
+
+[partner_component_latest_release]
+other = "Latest Release"
+
+[partner_component_helm_chart]
+other = "Helm Chart"
+
+[partner_component_alameda_versions]
+other = "Tested by %s with these Alameda Versions"
+
+[partner_component_supported_templates]
+other = "Supported Templates"
+
+[adapter]
+other = "Adapter"
+
+[supported_templates]
+other = "Supported Templates"
+
+[adapters]
+other = "Adapters"
+
+[template]
+other = "Template"
+
+[subscribe]
+other = "Subscribe"
