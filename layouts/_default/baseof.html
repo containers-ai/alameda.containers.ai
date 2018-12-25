@@ -1,5 +1,3 @@
-{{ $home := .Site.BaseURL }}
-
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}" itemscope itemtype="https://schema.org/WebPage">
     <head>
@@ -8,35 +6,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="theme-color" content="#466BB0"/>
 
-        {{ define "description" }}{{ with .Page.Description }}{{ . }}{{ else }}An open platform to connect, manage, and secure microservices.{{ end }}{{ end }}
+        {{ with .Page.Description }}
+            {{ if not (or (strings.HasSuffix . ".") (strings.HasSuffix . "。")) }}
+                {{ errorf "Page description doesn't end with a period: '%s'" .Page.Description }}
+            {{ end }}
+        {{ end }}
+
+        {{ define "description" }}{{ with .Page.Description }}{{ . }}{{ else }}Connect, secure, control, and observe services.{{ end }}{{ end }}
 
         <meta name="title" content="{{ .Title }}">
         <meta name="description" content="{{ template "description" . }}">
 
+        {{ if .Page.Params.attribution }}
+            <meta name="author" content="{{ .Page.Params.attribution }}">
+        {{ end }}
+
         {{ if .Page.Params.keywords }}
-            <meta name="keywords" content="microservices,services,{{ delimit .Page.Params.keywords "," }}">
+            <meta name="keywords" content="microservices,services,mesh,{{ delimit .Page.Params.keywords "," }}">
         {{ else }}
-            <meta name="keywords" content="microservices,services">
+            <meta name="keywords" content="microservices,services,mesh">
         {{ end }}
 
         <!-- Open Graph protocol -->
-        <meta name="og:title" content="{{ .Title }}">
-        <meta name="og:description" content="{{ template "description" . }}">
-        <meta name="og:url" content="{{ .Permalink }}">
-        <meta name="og.site_name" content="Alameda">
+        <meta property="og:title" content="{{ .Title }}">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="{{ template "description" . }}">
+        {{ if .Permalink }}
+            <meta property="og:url" content="{{ .Permalink }}">
+        {{ end }}
+        <meta property="og:image" content="{{ .Site.BaseURL }}/img/alameda-whitelogo-bluebackground-framed.svg">
+        <meta property="og:image:alt" content="Alameda Logo">
+        <meta property="og:image:width" content="112">
+        <meta property="og:image:height" content="150">
+        <meta property="og:site_name" content="Alameda">
 
+        {{ $analytics_id := .Site.Data.args.main_analytics_id }}
         {{ if .Site.Data.args.archive }}
             {{ if eq .Title "Alameda" }}
                 <title>Alamedaldie {{ .Site.Data.args.version }}</title>
             {{ else }}
                 <title>Alamedaldie {{ .Site.Data.args.version }} / {{ .Title }}</title>
             {{ end }}
+            {{ $analytics_id = .Site.Data.args.archive_analytics_id }}
         {{ else if .Site.Data.args.preliminary }}
             {{ if eq .Title "Alameda" }}
                 <title>Alameda Prelim {{ .Site.Data.args.version }}</title>
             {{ else }}
                 <title>Alameda Prelim {{ .Site.Data.args.version }} / {{ .Title }}</title>
             {{ end }}
+            {{ $analytics_id = .Site.Data.args.preliminary_analytics_id }}
         {{ else }}
             {{ if eq .Title "Alameda" }}
                 <title>Alameda</title>
@@ -46,22 +64,28 @@
         {{ end }}
 
         <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ $analytics_id }}"></script>
         <script>
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-98480406-1', 'auto');
-            ga('send', 'pageview');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ $analytics_id }}');
         </script>
-        <script async src='https://www.google-analytics.com/analytics.js'></script>
         <!-- End Google Analytics -->
 
         <script>
-                var branchName = "{{ .Site.Data.args.branch_name }}";
+            var branchName = "{{ .Site.Data.args.source_branch_name }}";
+            var docTitle = "{{ .Title }}";
+            var iconFile = "{{ .Site.BaseURL}}/img/icons.svg";
+            var buttonCopy = '{{ i18n "button_copy" }}';
+            var buttonPrint = '{{ i18n "button_print" }}';
+            var buttonDownload = '{{ i18n "button_download" }}';
         </script>
 
         <!-- RSS -->
         <link rel="alternate" type="application/rss+xml" title="Alameda Blog" href="/feed.xml">
 
-        <!-- Favicons: generated from img/Alameda-logo-social.svg by http://cthedot.de/icongen -->
+        <!-- Favicons: generated from img/alameda-whitelogo-bluebackground-framed.svg by http://cthedot.de/icongen -->
         <link rel="shortcut icon" href="/favicons/favicon.ico" >
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
         <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
@@ -69,7 +93,7 @@
         <link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
         <link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
         <link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
-        <link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x196">
+        <link rel="icon" type="image/png" href="/favicons/android-96x196.png" sizes="96x196">
         <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
         <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
@@ -79,9 +103,8 @@
         <meta name="application-name" content="Alameda">
 
         <!-- style sheets -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,300,700,300italic,400italic,500italic,700italic|Chivo:400,500,300,700,300italic,400italic,500italic,700italic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 
         {{ if .Site.Data.args.archive }}
             <link rel="stylesheet" href="/css/light_theme_archive.css" title="light">
@@ -103,7 +126,9 @@
         {{ partial "footer.html" . }}
 
         <div class="d-xl-none d-print-none">
-            <button id="scroll-to-top" aria-hidden="true" onclick="scrollToTop()" title="Back to top"><i class="fa fa-lg fa-arrow-up"></i></button>
+            <button id="scroll-to-top" aria-hidden="true" onclick="scrollToTop()" title='{{ i18n "button_top"}}'>
+                {{ partial "icon.html" "top" }}
+            </button>
         </div>
 
         <!-- libraries we pull in -->

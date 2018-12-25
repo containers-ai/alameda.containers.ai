@@ -1,12 +1,25 @@
 {{ $page := .page }}
-{{ $toc := (trim $page.TableOfContents " ") }}
 {{ $page.Scratch.Set "needTOC" false }}
+{{ $page.Scratch.Set "seeAlso" false }}
 
-{{ if (eq $toc "") }}
+{{ $related := $page.Site.RegularPages.Related $page | first 6 }}
+{{ with $related }}
+    {{ $page.Scratch.Set "seeAlso" true }}
+{{ end }}
+
+{{ if $page.Scratch.Get "skipSeeAlso" }}
+    {{ $page.Scratch.Set "seeAlso" false }}
+{{ end }}
+
+{{ if $page.Params.skip_seealso }}
+    {{ $page.Scratch.Set "seeAlso" false }}
+{{ end }}
+
+{{ if not $page.Params.skip_toc }}
     {{ $headers := findRE "<h[23456].*?id=\".*?\".*?>.*?</h[23456]>" $page.Content }}
     {{ $len := len $headers }}
 
-    {{ if gt $len 0 }}
+    {{ if or (gt $len 0) ($page.Scratch.Get "seeAlso") }}
         {{ $page.Scratch.Set "needTOC" true }}
         <nav id="TableOfContents">
             <ul>
@@ -29,14 +42,22 @@
                         {{ end }}
                     {{ end }}
 
-                    <li><a href="#{{ $id }}">{{ $title }}</a></li>
+                    <li><a href="#{{ $id }}">{{ $title | safeHTML }}</a></li>
 
                     {{ $page.Scratch.Set "level" $level }}
+                {{ end }}
+
+                {{ $delta := sub ($page.Scratch.Get "level") 50 }}
+                {{ range $index, $num := (seq $delta) }}
+                    </ul>
+                {{ end }}
+
+                {{ if $page.Scratch.Get "seeAlso" }}
+                    {{ with $related }}
+                        <li><a href="#see-also">See also</a></li>
+                    {{ end }}
                 {{ end }}
             </ul>
         </nav>
     {{ end }}
-{{ else }}
-    {{ $page.Scratch.Set "needTOC" true }}
-    {{ safeHTML $toc }}
 {{ end }}
