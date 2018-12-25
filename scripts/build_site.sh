@@ -17,5 +17,5 @@ uglifyjs src/js/misc.js src/js/utils.js src/js/prism.js --mangle --compress -o s
 uglifyjs src/js/styleSwitcher.js --mangle --compress -o static/js/styleSwitcher.min.js --source-map
 svgstore -o static/img/icons.svg src/icons/**/*.svg
 
-tar -zcvf js.tar.gz src/js
-tar -zcvf css.tar.gz src/css
+tar -zcvf js.tar.gz static/js
+tar -zcvf css.tar.gz static/css
