@@ -32,48 +32,70 @@ title: Alameda
       "image": [
           "https://containers.ai/img/logo.png"
        ],
-      "description": "Alameda is an open platform to connect, manage, and secure microservices."
+      "description": "The Brain of Resource Orchestration for Kubernetes."
     }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('card1').style.opacity = "1";
+        document.getElementById('card2').style.opacity = "1";
+        // window.setTimeout(function() {
+        //     document.getElementById('card2').style.opacity = "1";
+        // }, 375);
+
+        window.setTimeout(function() {
+            document.getElementById('buttons').style.opacity = "1";
+        }, 375);
+        
+    });
 </script>
 
 <main class="landing">
-    <div class="hero">
-        <div class="container">
-            <h1 class="hero-label">Alameda{{< site_suffix >}} {{< alameda_version >}}</h1>
-            <img class="hero-logo" alt="Alameda Logo" src="/img/alameda-logo.svg" />
-            <h1 class="hero-lead">An open platform to connect, manage, and secure microservices</h1>
-            <span onclick="getElementById('SCROLLME').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'})" class="hero-down-arrow fa fa-2 fa-caret-down"></span>
-            <span id="SCROLLME"></span>
-        </div>
-    </div>
-
-    <div class="container-fluid call color1">
-        <div class="row no-gutters">
-            <div class="col-12 col-md-6">
-                <h2>Want to learn more?</h2>
-                <p>Get started by learning Alameda concepts and running through our sample.</p>
-                <a class="btn btn-alameda" href="/docs/">GET STARTED</a>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <h2>Ready to get started?</h2>
-                <p>Download the latest bits.</p>
-                <a class="btn btn-alameda" href="https://github.com/containers-ai/alameda/releases/">DOWNLOAD</a>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <!-- {{< inline_image "landing/alameda-logo.svg" >}} -->
+            <div class="hero-text">
+                <h1 class="hero-label">Alameda</h1>
+                <h1 class="hero-lead">The Brain of Resource Orchestration for Kubernetes.
             </div>
         </div>
     </div>
 
-    <style>
-        header .navbar {
-            box-shadow: none;
-        }
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div id="card1" class="card">
+                <a href="/docs/concepts/">                    
+                    <div class="card-body">
+                        <hr class="card-line">
+                        <h5 class="card-title text-center">AI-driven</h5>
+                        <hr class="card-line">
+                        <p class="card-text">
+                            Alameda AI Engine generates loading data prediction for the future time. The AI Engine learns patterns from the historical performance metrics of each node and pods running on it.
+                        </p>
+                    </div>
+                </a>
+            </div>
 
-        body {
-            padding-top: 2.8rem;
-        }
-        
-        .navbar-brand {
-            visibility: hidden;
-        }
-    </style>
+            <div id="card2" class="card">
+                <a href="/docs/concepts/">
+                    <div class="card-body">
+                        <hr class="card-line">
+                        <h5 class="card-title text-center">Policy-driven</h5>
+                        <hr class="card-line">
+                        <p class="card-text">
+                            Alameda provides policies for users to orchestrate resources. This policy-based optimization simplifies resource management complexity.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="buttons" class="buttons container-fluid">
+        <div class="row justify-content-center">
+            <a title="Install Alameda on Kubernetes today." class="btn btn-alameda" href="/docs/setup/kubernetes/quick-start">GET STARTED</a>
+            <a title="Dive deeper to understand what Alameda is and how it works." class="btn btn-alameda" href="/docs/concepts/">LEARN MORE</a>
+            <a title="Download the latest release." class="btn btn-alameda" href="{{< alameda_release_url >}}">DOWNLOAD {{< alameda_release_name >}}</a>
+        </div>
+    </div>
 </main>
