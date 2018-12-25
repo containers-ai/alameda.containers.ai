@@ -74,7 +74,7 @@
                         <h6 class="dropdown-header">{{ i18n "other_versions_of_site" }}</h6>
 
                         {{ $next := index .Site.Data.releases 0 }}
-                        {{ $current := index .Site.Data.releases 1 }}
+                        {{ $current := index .Site.Data.releases 0 }}
 
                         {{ if .Site.Data.args.archive }}
                             <a href="https://containers.ai" class="dropdown-item">{{ printf (i18n "current_release") $current.name }}</a>
