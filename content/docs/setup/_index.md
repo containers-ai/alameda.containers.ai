@@ -1,6 +1,6 @@
 ---
 title: Setup
-description: Setup contains instructions for installing the Alameda control plane in various environments (e.g., Kubernetes, openshift, etc.), as well as instructions for installing the sidecar in the application deployment.
+description: How to deploy Alameda in various environments (e.g., Kubernetes, Openshift).
 weight: 15
-type: section-index
+icon: setup
 ---
