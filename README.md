@@ -2,10 +2,10 @@
 
 This repository contains the source code for the [containers.ai](https://containers.ai).
 
-Please see the main Alameda [README](https://github.com/containers-ai/alameda/blob/master/README.md)
-file to learn about the overall Alameda project and how to get in touch with us. To learn how you can
-contribute to any of the Alameda components, please
-see the Alameda [contribution guidelines](https://github.com/containers-ai/alameda/blob/master/CONTRIBUTING.md).
+Please see the main Federator.ai (codename: Alameda) [README](https://github.com/containers-ai/alameda/blob/master/README.md)
+file to learn about the overall Federator.ai project and how to get in touch with us. To learn how you can
+contribute to any of the Federator.ai components, please
+see the Federator.ai [contribution guidelines](https://github.com/containers-ai/alameda/blob/master/CONTRIBUTING.md).
 
 * [Editing and testing content](#editing-and-testing-content)
 * [Linting](#linting)

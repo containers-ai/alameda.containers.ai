@@ -28,7 +28,7 @@ title: Alameda
     {
       "@context": "http://schema.org/",
       "@type": "Product",
-      "name": "Alameda",
+      "name": "Federator.ai",
       "image": [
           "https://containers.ai/img/logo.png"
        ],
@@ -93,8 +93,8 @@ title: Alameda
 
     <div id="buttons" class="buttons container-fluid">
         <div class="row justify-content-center">
-            <a title="Install Alameda on Kubernetes today." class="btn btn-alameda" href="/docs/setup/kubernetes/quick-start">GET STARTED</a>
-            <a title="Dive deeper to understand what Alameda is and how it works." class="btn btn-alameda" href="/docs/concepts/">LEARN MORE</a>
+            <a title="Install Federator.ai on Kubernetes today." class="btn btn-alameda" href="/docs/setup/kubernetes/quick-start">GET STARTED</a>
+            <a title="Dive deeper to understand what Federator.ai is and how it works." class="btn btn-alameda" href="/docs/concepts/">LEARN MORE</a>
             <a title="Download the latest release." class="btn btn-alameda" href="{{< alameda_release_url >}}">DOWNLOAD {{< alameda_release_name >}}</a>
         </div>
     </div>
