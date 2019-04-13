@@ -16,4 +16,4 @@ Two common issues in multi-cloud are over-provisioned computing resources and wr
 
 ## Quick Star Guides
 
-**FederatorAI** provides three installation approaches. You can use [Federator.ai Operator](https://operatorhub.io/operator/alpha/federatorai.v0.0.1). You can also use Helm to intsall [Federator.ai Chart](https://github.com/containers-ai/alameda/tree/master/helm).
+**FederatorAI** provides three installation approaches. You can use [Federator.ai Operator](https://operatorhub.io/operator/alpha/federatorai.v0.0.1). You can also use Helm to install [Federator.ai Chart](https://github.com/containers-ai/alameda/tree/master/helm).
